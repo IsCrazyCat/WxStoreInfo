@@ -1,0 +1,14 @@
+<view class="body">
+  <view class="indexChange">
+    <view class="top-view-image">
+      <image  class="top-image" src="../../static/image/change0.jpg" mode="scaleToFill"/>
+    </view>
+    <view class="searchView">
+      <picker bindtap="areaPickerChange" class="area_search_picker" value="{{index}}" range="{{array}}" >
+          <view>{{array[index]}}</view>
+      </picker>
+      <input class="serch_input" placeholder="将会获取焦点取焦点"></input>
+      <button bindtap="searchBtn" class="search_btn" type="default" >搜索</button>
+    </view>
+  </view>
+</view>

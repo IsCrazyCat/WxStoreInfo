@@ -1,0 +1,53 @@
+<view id="item-{{id}}" wx:if="{{condition}}">
+  这里显示{{message+" Hello WeChat!"}}
+
+</view>
+<view wx:elif="{{true}}">这是是ws:elif = false </view>
+<view wx:else>这里是wx:else</view>
+<checkbox checked="{{true}}"></checkbox>
+<view>
+  {{object.key}}+{{array[1]}}
+</view>
+
+<view wx:for="{{[zero,1,2,3,4]}}">
+  {{item}}
+</view>
+<template is="objectCombine" date="{{for:a,bar:b}}">
+
+</template>
+
+<view wx:for="{{arrays}}">
+  {{index}}:{{item.message}}
+</view>
+<view wx:for="{{arrays}}" wx:for-item="object" wx:for-index="windex">
+  {{windex}}:{{object.message}}
+</view>
+<view wx:for="{{[0,1]}}" wx:for-item="i">
+  <view wx:for="{{[0,1]}}" wx:for-item="j">
+    <view wx:if="{{i <= j}}">
+      {{i}} * {{j}} = {{i * j}}
+    </view>
+  </view>
+</view>
+<block wx:for="{{[1,2,3]}}">
+  <view>{{index}}:</view>
+  <view>{{item}}</view>
+</block>
+
+<switch wx:for="{{objectArray}}" wx:key="unique" style="display:block;">
+  {{item.id}}
+</switch>
+<button bindtap="switch">Switch</button>
+<button bindtap="addToFront">Add to the Front</button>
+
+<switch wx:for="{{numberArray}}" wx:key="*this" style="display:block;">{{item}}</switch>
+<button bindtap = "addNumberToFront">Add to the Front</button>
+
+<!--
+  template
+-->
+
+<import src="../index/index.wxml"/>
+<template is="msgItem" data="{{...item}}"></template>
+
+<view id="tapTest" data-hi="WeChat" bindtap="tapName">Click Me</view>

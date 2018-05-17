@@ -1,0 +1,16 @@
+<!--pages/index/search/search.wxml-->
+<!-- 搜索页面 -->
+<view class="search-title">
+  <view class="search-bar">
+      <icon type="search" size="16" class="search"/>
+      <input placeholder="搜索商家" placeholder-class="placeholder" bindinput="inputShow" value="{{input_value}}"/>
+      <!-- 点击取消返回上一页 -->
+      <button type="default" class="cancel" bindtap="getBack">取消</button>
+      
+      <icon hidden="{{cancel_icon}}" type="cancel"  color="grey" size="16" class="cancel-icon" bindtap="clearInput"/>
+  </view>
+  <!--显示搜索的内容  -->
+  <view class="wrap-content" hidden="{{active_search}}">
+      <view class="bod-style">{{active_search_val}}</view>
+  </view>
+</view>
