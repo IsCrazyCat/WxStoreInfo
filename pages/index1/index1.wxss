@@ -1,87 +1,76 @@
-/* pages/index/search/search.wxss */
-.search-title{
-    margin:0 20rpx;
-    height: 100%;
-}
-.search-bar{
+/**index.wxss**/
+
+ /** header CSS **/
+.header{
+    height: 300rpx;
     display: flex;
-    position: relative;
-    margin-bottom:14rpx;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c81624;
+    color: #fff;
 }
 .search{
-    position: absolute;
-    z-index: 2;
-    left:16rpx;
-    top:10rpx;
+    margin:20rpx 0 18rpx 0;
+    position: relative;
 }
-.cancel-icon{
+.search-static{
     position: absolute;
-    right:150rpx;
+    left:232rpx;
+    top:10rpx;
     z-index:2;
-    top:10rpx;
 }
-.search-bar>input{
-    width:508rpx;
-    height:60rxp;
-    border-radius:25rpx;
-    background-color:#e9e8ee;
-    padding-left:60rpx;
-    font-size: 28rpx;
-    vertical-align: middle;
-
+.search input{
+    color: #c6c6c6;
+    width: 680rpx;
+    height:45rpx;
+    border-radius: 32rpx;
+    -webkit-border-radius : none ;  /*解决iphone safari上的圆角问题*/
+    background: #ffffff;
+    font-size:24rpx;
+    text-align: center;
+ }
+ .changeImgeView{
+   width: 100%;
+ }
+.changeImgeView swiper{
+  height: 310rpx;
+ } 
+.changeImgeView image{
+   width: 100%;
+ } 
+ /** storeInfo CSS **/
+ .tabBarView{
+   margin-top:10rpx;
+   height: 235rpx;
+ }
+ .nav_store_menu:first-child{
+   border-left:none;
+   margin-left:1%;
+ }
+ .nav_store_menu{
+   border: 1px solid red;
+   border-right: none;
+   float: left;
+   width: 19.5%;
+   line-height: 50rpx;
+   text-align: center;
+   font-size: 30rpx; 
+ }
+ /* 导航对应内容项 */
+.nav_section{
+    width:100%;
 }
-.placeholder{
-    font-size:28rpx;
-    color: #d6d6d9;
-}
-.cancel{
-    width:120rpx;
-    height:54rpx;
-    font-size:26rpx;
-    line-height:54rpx;
-}
-.search-btn{
-  width:120rpx;
-  height:54rpx;
-  font-size:26rpx;
-  line-height:54rpx;
-  color: #fff;
-  background-color: #f23030;
-}
-.content{
-    border-top:1rpx solid #e2e2e2;
-}
-.wrap-content{
-    margin:33rpx 20rpx 0 20rpx;
-}
-.bod-style{
-  border-bottom: 1rpx solid #e9e8ee;
-  text-indent: 10rpx;
-  padding-bottom: 15rpx;
-}
-.storeInfoView{
-  flex: auto;   
-  position: relative;  
-  margin-top: 10%; 
-  height:90%;
-}
-.storeInfoView scroll-view{  
-  position: absolute;  
-  height: 100%;
-  bottom: 0;  
-  left: 0;  
-  right: 0;  
-  top: 0;  
-}  
 .nav_section_items{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
     padding:30rpx;
-    border-bottom:1rpx solid #ddd;
+    border-top:1rpx solid #ddd;
     position: relative;
 }
-
+.nav_section_items:active{
+    background:#ddd;
+}
 .nav_section_items .section_image{
     width:170rpx;
     height:158rpx;
@@ -91,7 +80,7 @@
     height:100%;
 }
 .nav_section_items .section_cont{
-    width:350rpx;
+    width:400rpx;
     font-size:26rpx;
     color:#a9a9a9;
     
@@ -132,6 +121,58 @@
     text-align: center;
     margin-top:35rpx;
 }
+.categoryList{
+  width: 100%;
+  height: 220rpx;
+  font-size:24rpx;
+  margin-top: 20rpx;
+}
+.category-info{
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  margin-top: 20rpx;
+  height: 150rpx;
+  width: 25%;
+}
+.category-image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.category-text{
+  width: 100%;
+  line-height: 30rpx;
+  margin:15rpx 0;
+}
+.section-bar{
+    width:100%;
+    height:15rpx;
+    background: #e9e8ed;
+}
+.header-title{
+  text-align: center;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #c6c6c6;
+}
+.bottom-loading{  
+  padding: 10rpx;  
+  text-align: center;  
+}  
+.storeInfoView{
+  flex: auto;   
+  position: relative;  
+}
+.storeInfoView scroll-view{  
+  position: absolute;  
+  height: 600rpx;
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  top: 0;  
+}  
 .weui-loading {
   margin: 0 5px;
   width: 20px;
@@ -155,18 +196,3 @@
   display: inline-block;
   vertical-align: middle;
 }
-.already_loaded{
-  text-align: center;
-  width: 100%;
-  height: 80rpx;
-  line-height: 80rpx;
-  font-size: 24rpx;
-  color: #c6c6c6;
-}
-
-
-
-
-
-
-

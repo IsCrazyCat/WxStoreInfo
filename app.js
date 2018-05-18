@@ -1,8 +1,8 @@
   //app.js
 App({
   data:{
-    servers: "http://10.10.10.97:8081"
-    // servers:"http://39.105.51.172/store"
+    // servers: "http://10.10.10.97:8081"
+    servers:"http://39.105.51.172/store"
   },
   onLaunch: function (options) {
     // 登录
