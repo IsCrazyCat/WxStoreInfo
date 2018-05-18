@@ -5,12 +5,41 @@
       <icon type="search" size="16" class="search"/>
       <input placeholder="搜索商家" placeholder-class="placeholder" bindinput="inputShow" value="{{input_value}}"/>
       <!-- 点击取消返回上一页 -->
-      <button type="default" class="cancel" bindtap="getBack">取消</button>
-      
+      <button type="default" class="cancel" bindtap="getBack">取消</button>     
       <icon hidden="{{cancel_icon}}" type="cancel"  color="grey" size="16" class="cancel-icon" bindtap="clearInput"/>
   </view>
-  <!--显示搜索的内容  -->
-  <view class="wrap-content" hidden="{{active_search}}">
-      <view class="bod-style">{{active_search_val}}</view>
+  <view class = "storeInfoView">
+    <scroll-view scroll-y="true" bindscrolltolower="findMoreStore">  
+      <block wx:for="{{storeList}}" wx:key="">
+        <!--list-->
+        <!-- <navigator url="../map/map" class="navigator"> -->
+          <view class="nav_section">
+            <view class="nav_section_items">
+              <!--image-->
+              <view class="section_image">
+                <image src="{{item.logoUrl}}" mode="aspectFill"></image>
+              </view>
+              <!--content-->
+              <view class="section_cont">
+                <view class="section_cont_sub">
+                  <text>{{item.name}}</text>
+                </view>
+                <view class="section_cont_price">{{item.description}}</view>
+                <view class="section_address">地址：{{item.address}}</view>
+              </view>
+              <!--book-->
+              <view class="section_book">
+                <text bindtap="callMe" data-mobile="{{item.mobile}}">预约</text>
+              </view>
+            </view>
+          </view>
+        <!-- </navigator> -->
+      </block>
+      <view wx:if="{{iconLoadingFlag}}"class="weui-loadmore">
+          <view class="weui-loading"/>
+          <view class="weui-loadmore__tips">正在加载...</view>
+      </view>
+      <view class="already_loaded" wx:if="{{iconLoadedFlag}}">已加载全部内容！ </view>
+    </scroll-view>
   </view>
 </view>

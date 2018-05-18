@@ -165,7 +165,7 @@ Page({
       }
     });
     wx.request({
-      url: getApp().data.servers +"/api/store/findStoreInfo?page=0&size=4&sort=order_id:DESC",
+      url: getApp().data.servers +"/api/store/findStoreInfo?page=0&size=4",
       data: {},
       method: "POST",
       success: function (data) {
